@@ -7,7 +7,9 @@ It takes input from the user.
 This is the sample input for the code:
 
 No. of states : 4
+
 No. of transitions : 2
+
 state name : A
 path : a
 Enter end state from state traveling through path a:
