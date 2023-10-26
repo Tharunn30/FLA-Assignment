@@ -1,58 +1,94 @@
-# FLA-Assignment
-NFA to DFA Conversion 
+# NFA to DFA Conversion
 
-This code is for NFA to DFA conversion.
-It takes input from the user.
+This Python script converts a Non-Deterministic Finite Automaton (NFA) into a Deterministic Finite Automaton (DFA). It takes user input for the number of states and transitions, collects transition details, and then generates the corresponding DFA.
 
-This is the sample input for the code:
+### Prerequisites
 
-No. of states : 4
+- Python 3.x
+- pandas library (Install using `pip install pandas`)
 
-No. of transitions : 2
+### Usage
 
-state name : A
+1. Run the script.
+2. Enter the number of states `n` and the number of transitions `t`.
+3. For each state, provide the state name and its transitions using various input paths.
+4. Enter the final state of the NFA.
 
-path : a
+### Input
 
-Enter end state from state traveling through path a:
-A B
+- Number of states (`n`)
+- Number of transitions (`t`)
+- For each state `i` from `1` to `n`:
+    - State name
+    - `t` transitions with paths and the states reachable from the current state through each path
+- Final state of NFA
 
-path : b
+### Output
 
-Enter end state from state A traveling through path b:
-A
+1. **NFA Table:** 
+   - Displays the input NFA in tabular format.
+   
+2. **DFA Table:** 
+   - Displays the converted DFA in tabular format.
 
-state name : B
+3. **Final States of DFA:** 
+   - Lists the final states of the generated DFA.
 
-path : a
+### How it Works
 
-Enter end state from state B travelling through path a:
-C
+1. **Input NFA Processing:**
+   - Accepts user input for NFA states and transitions.
+   - Constructs the NFA table.
 
-path : b
+2. **DFA Conversion:**
+   - Converts the NFA transitions into equivalent DFA transitions.
+   - Computes the DFA table and final states.
 
-Enter end state from state B travelling through path b:
-C
+### Example
 
-state name : C
+**Input:**
+```
+No. of states: 3
+No. of transitions: 2
 
-path : a
+State 1:
+Path 0: q0 q1
+Path 1: q0
+Path 2: q1
 
-Enter end state from state C while traveling through path a:
-D
+State 2:
+Path 0: q2
+Path 1: q2
 
-path : b
+State 3:
+Path 0: q1
+Path 1: q0 q1
 
-Enter end state from state C travelling through path b : 
-D
+Final state of NFA: q2
+```
 
-state name : D
+**Output:**
 
-path : a
+*NFA Table:*
+```
+   q0    q1    q2
+0  q1  q0 q1     
+1  q1        q2  
+2  q0  q1         
+```
 
-Enter end state from state D travelling through path a : 
+*DFA Table:*
+```
+    q0q1    q2
+0  q1q0q1     
+1  q1q2       
+2  q0q1     
+```
 
+*Final States of DFA:*
+```
+Final states of the DFA are :  ['q1q2', 'q0q1q2']
+```
 
-path : b
-
-Enter end state from state D travelling through path b : 
+### Note
+- The script uses the pandas library to display the NFA and DFA tables. Make sure you have pandas installed (`pip install pandas`) before running the script.
