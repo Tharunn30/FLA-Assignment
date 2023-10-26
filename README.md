@@ -48,46 +48,60 @@ This Python script converts a Non-Deterministic Finite Automaton (NFA) into a De
 
 **Input:**
 ```
-No. of states: 3
-No. of transitions: 2
+No. of states : 4
+No. of transitions : 2
+state name : A
+path : a
+Enter end state from state A travelling through path a : A B
+path : b
+Enter end state from state A travelling through path b : A
+state name : B
+path : a
+Enter end state from state B travelling through path a : C
+path : b
+Enter end state from state B travelling through path b : C
+state name : C
+path : a
+Enter end state from state C travelling through path a : D
+path : b
+Enter end state from state C travelling through path b : D
+state name : D
+path : a
+Enter end state from state D travelling through path a : 
+path : b
+Enter end state from state D travelling through path b : 
 
-State 1:
-Path 0: q0 q1
-Path 1: q0
-Path 2: q1
-
-State 2:
-Path 0: q2
-Path 1: q2
-
-State 3:
-Path 0: q1
-Path 1: q0 q1
-
-Final state of NFA: q2
 ```
 
 **Output:**
 
 *NFA Table:*
 ```
-   q0    q1    q2
-0  q1  q0 q1     
-1  q1        q2  
-2  q0  q1         
+        a    b
+A  [A, B]  [A]
+B     [C]  [C]
+C     [D]  [D]
+D      []   []
+      
 ```
 
 *DFA Table:*
 ```
-    q0q1    q2
-0  q1q0q1     
-1  q1q2       
-2  q0q1     
+         a    b
+A       AB    A
+AB     ABC   AC
+ABC   ABCD  ACD
+AC     ABD   AD
+ABCD  ABCD  ACD
+ACD    ABD   AD
+ABD    ABC   AC
+AD      AB    A
+   
 ```
 
 *Final States of DFA:*
 ```
-Final states of the DFA are :  ['q1q2', 'q0q1q2']
+Final states of the DFA are :  ['ABCD', 'ACD', 'ABD', 'AD']
 ```
 
 ### Note
