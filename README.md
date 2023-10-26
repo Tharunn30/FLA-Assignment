@@ -62,26 +62,19 @@ Sample output :
 
 NFA :- 
 
-
 {'A': {'a': ['A', 'B'], 'b': ['A']}, 'B': {'a': ['C'], 'b': ['C']}, 'C': {'a': ['D'], 'b': ['D']}, 'D': {'a': [], 'b': []}}
 
-
 Printing NFA table :- 
-
         a    b
 A  [A, B]  [A]
 B     [C]  [C]
 C     [D]  [D]
 D      []   []
-
-Enter final state of NFA : 
-D
+Enter final state of NFA : D
 
 DFA :- 
 
-
 {'A': {'a': 'AB', 'b': 'A'}, 'AB': {'a': 'ABC', 'b': 'AC'}, 'ABC': {'a': 'ABCD', 'b': 'ACD'}, 'AC': {'a': 'ABD', 'b': 'AD'}, 'ABCD': {'a': 'ABCD', 'b': 'ACD'}, 'ACD': {'a': 'ABD', 'b': 'AD'}, 'ABD': {'a': 'ABC', 'b': 'AC'}, 'AD': {'a': 'AB', 'b': 'A'}}
-
 
 Printing DFA table :- 
          a    b
@@ -94,5 +87,26 @@ ACD    ABD   AD
 ABD    ABC   AC
 AD      AB    A
 
+Final states of the DFA are :  ['ABCD', 'ACD', 'ABD', 'AD']
 
-Final states of the DFA are :  ['ABCD', 'ACD', 'ABD', 'AD']
+Printing DFA table :- 
+         
+         a    b
+
+A       AB    A
+
+AB     ABC   AC
+
+ABC   ABCD  ACD
+
+AC     ABD   AD
+
+ABCD  ABCD  ACD
+
+ACD    ABD   AD
+
+ABD    ABC   AC
+
+AD      AB    A
+
+Final states of the DFA are :  ['ABCD', 'ACD', 'ABD', 'AD']
