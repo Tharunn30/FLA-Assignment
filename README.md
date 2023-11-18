@@ -1,4 +1,3 @@
-Absolutely, here's a README file template for the HTML code you've provided:
 
 ---
 
