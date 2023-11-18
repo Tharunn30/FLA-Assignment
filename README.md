@@ -3,7 +3,7 @@
 
 # NFA to DFA Converter
 
-This HTML file constitutes a visual tool for converting Non-deterministic Finite Automata (NFA) to Deterministic Finite Automata (DFA). The converter allows users to build an NFA visually and then perform the conversion process step-by-step or in animated/complete modes.
+This Project constitutes a visual tool for converting Non-deterministic Finite Automata (NFA) to Deterministic Finite Automata (DFA). The converter allows users to build an NFA visually and then perform the conversion process step-by-step or in animated/complete modes.
 
 ## Description
 
